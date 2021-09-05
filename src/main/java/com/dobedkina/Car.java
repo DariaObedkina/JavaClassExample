@@ -30,6 +30,7 @@ public class Car {
     }
 
 
+    //вывести всю информацию о машине
     public void showCarInfo() {
         System.out.println("Марка: " + brand + "\n"
                 + "Цвет: " + color + "\n"
@@ -40,6 +41,7 @@ public class Car {
 
     }
 
+    //сравнить скорость машин
     public String compareSpeed(Car car) {
         if (this.maxSpeed > car.maxSpeed) {
             return this.brand + " быстрее, чем " + car.brand;
@@ -49,6 +51,7 @@ public class Car {
             return "У машин " + car.brand + " и " + this.brand + " одинаковая максимальная скорость";
     }
 
+    //добавить определенное кол-во литров топлива в бензобак
     public void fillTank(double liters) {
         if (liters <= 0) {
             System.out.println("Введите число > 0");
@@ -64,21 +67,25 @@ public class Car {
 
     }
 
+    //проехать N километров
     public void driveNKilometers(int n) {
         if (n == 0) {
-            System.out.println("Никуда не едем, стоим на месте.");
+            System.out.println(brand +  " стоит на месте.");
         } else if (n < 0) {
-            System.out.println("Задний ход!");
+            System.out.println(brand + " сдает назад.");
             for (int i = 0; i < Math.abs(n); i++) {
                 System.out.println("Vroom-vroom!");
             }
         } else {
+            System.out.println(brand + " едет.");
             for (int i = 0; i < n; i++) {
                 System.out.println("Vroom-vroom!");
             }
         }
+        System.out.println("\n");
     }
 
+    //узнать, сколько литров топлива можно добавить в бензобак
     private double fuelCanBeAdded(double fuelInTank) {
         return (double) tankCapacity - fuelInTank;
     }
