@@ -8,10 +8,6 @@ public class Car {
     private int tankCapacity;
     private double fuelInTank;
 
-    /*public Car() {
-
-    }*/
-
     public Car(String brand, String color, int maxSpeed, String year, int tankCapacity) {
         this.brand = brand;
         this.color = color;
@@ -28,7 +24,6 @@ public class Car {
         this.tankCapacity = tankCapacity;
         this.fuelInTank = fuelInTank;
     }
-
 
     //вывести всю информацию о машине
     public void showCarInfo() {
@@ -70,7 +65,7 @@ public class Car {
     //проехать N километров
     public void driveNKilometers(int n) {
         if (n == 0) {
-            System.out.println(brand +  " стоит на месте.");
+            System.out.println(brand + " стоит на месте.");
         } else if (n < 0) {
             System.out.println(brand + " сдает назад.");
             for (int i = 0; i < Math.abs(n); i++) {
